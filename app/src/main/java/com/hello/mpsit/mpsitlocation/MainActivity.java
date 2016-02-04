@@ -12,6 +12,7 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.StrictMode;
@@ -158,7 +159,8 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
         // Defined Array values to show in ListView
         String[] values = new String[] {
                 "Check Internet connection",
-                "Force use of GPS"};
+                "Force use of GPS",
+                "Start Browser"};
         // Define a new Adapter
         // First parameter - Context
         // Second parameter - Layout for the row
@@ -174,9 +176,9 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
                 // ListView Clicked item index
-                int itemPosition     = position;
+                int itemPosition = position;
                 // ListView Clicked item value
-                String  itemValue    = (String) listView.getItemAtPosition(position);
+                String itemValue = (String) listView.getItemAtPosition(position);
 
                 //Handle user click
                 handleListViewClicks(position);
@@ -375,6 +377,9 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
                 vibrator =  (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                 vibrator.vibrate(200);
                 break;
+            case 2:
+                Intent i = new Intent(android.content.Intent.ACTION_VIEW, Uri.parse("http://ischgl.mihneadb.net:3000/"));
+                startActivity(i);
             default:
                 Log.wtf("ERROR", "handleListViewClicks() : We should not be here");
                 return;

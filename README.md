@@ -8,3 +8,6 @@ A working server to which this app managed to connect has source code @ https://
 ![Screenshot](https://raw.githubusercontent.com/b12mihai/mpsit-android-location/master/documentation/screenshots/2016-02-03-20-57-00.png)
 ![Screenshot](https://raw.githubusercontent.com/b12mihai/mpsit-android-location/master/documentation/screenshots/2016-02-03-20-55-31.png)
 
+The generated documentation of the Android App API and server API which it connects to is found at: 
+    * http://ischgl.mihneadb.net:8080
+    * http://ischgl.mihneadb.net:8081
